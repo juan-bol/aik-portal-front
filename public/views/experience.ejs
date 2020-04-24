@@ -14,24 +14,23 @@
 <div class="container">
   <div class="jumbotron text-center">
     <h1><span class="glyphicon glyphicon-tower"></span></h1>
-    <h2>Experience</h2>
+    <h2>About AIK</h2>
   </div>
 
-  <div class="row">
-    <% experience.forEach(function(item, index) { %>
-      <div class="col-sm-4">
-        <div class="panel">
-          <div class="panel-heading">
-            <h1 class="panel-title"><%= item.title %></h1>
-          </div>
-          <div class="panel-body text-center">
-            <h3><%= item.description %></h3>
-          </div>
+  
+  <% experience.forEach(function(publication, index) { %>
+  
+      <div class="panel">
+        <div class="panel-heading">
+          <h1 class="panel-title"><%= publication.title %></h1>
+        </div>
+        <div class="panel-body text-center">
+          <h5><%= publication.description %></h5>
         </div>
       </div>
-    <% }) %>
-    </div>
-  </div>
+    
+  <% }) %>
+</div>
 
   </body> 
 </html>
