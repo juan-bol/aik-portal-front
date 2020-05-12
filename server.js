@@ -79,4 +79,18 @@ app.get('/experience', function(req, res){
     })
 })
 
+app.get('/comerciales', function(req, res){
+  request
+    .get('http://'+backendHost+':3000/comerciales')
+    .end(function(err, data) {
+      if(data.status == 403){
+        res.send(403, '403 Forbidden');
+      }else{
+        var comerciales = data.body;
+        res.render('comerciales', {comerciales : comerciales});
+      }
+    })
+})
+
+
 module.exports = app.listen(3030);
