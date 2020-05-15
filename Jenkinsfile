@@ -26,6 +26,6 @@ node {
     stage "Trigger downstream"
 
         def versionApp = sh returnStdout: true, script:"printf \$(git rev-parse --short HEAD)"
-        build job: "aik-cdelivery", parameters: [[$class: "StringParameterValue", name: "APP_VERSION", value: "${versionApp}-1"]], wait: false
+        build job: "frontend_pipeline_CD", parameters: [[$class: "StringParameterValue", name: "APP_VERSION", value: "${versionApp}-1"]], wait: false
 
 }
